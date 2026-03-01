@@ -5,6 +5,7 @@ import connectDB from "./config/mongodb.js"
 import connectCloudinary from "./config/cloudinary.js"
 import authRoutes from "./routes/auth.js"
 import blogRoutes from "./routes/blogs.js"
+import commentRoutes from "./routes/comments.js"
 import multer from "multer"
 
 // Load environment variables
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true }))
 // Routes
 app.use("/api/auth", authRoutes)
 app.use("/api/blogs", blogRoutes)
+app.use("/api/comments", commentRoutes)
 
 // Error handling middleware
 app.use((error, req, res, next) => {
